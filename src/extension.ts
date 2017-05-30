@@ -13,31 +13,39 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
 
+        // Rename file to .tsx
+        const filePath = getFilePath();
+        const tsxPath = getTSXFileName(filePath);
+        await fs.rename(filePath, tsxPath);
+
         const input = editor.document.getText();
-        const inputPath = path.join(__dirname, randomFileName());
-        await fs.writeFile(inputPath, input);
-        const result = convertToTypeScript(inputPath);
+        const result = convertToTypeScript(tsxPath);
+
         editor.edit(async (builder) => {
             const start = new vscode.Position(0, 0);
             const lines = result.split(/\n|\r\n/);
             const end = new vscode.Position(lines.length, lines[lines.length - 1].length)
             const allRange = new vscode.Range(start, end);
             builder.replace(allRange, result);
-
-            // vscode
-
-            // Delete temp file
-            await fs.remove(inputPath);
         })
     });
 
     context.subscriptions.push(disposable);
 }
 
-// this method is called when your extension is deactivated
-export function deactivate() {
+function getFilePath(): string {
+    const activeEditor: vscode.TextEditor = vscode.window.activeTextEditor;
+    const document: vscode.TextDocument = activeEditor && activeEditor.document;
+
+    return document && document.fileName;
 }
 
-function randomFileName() {
-    return Math.random().toString(36).substring(2) + '.ts';
+function getTSXFileName(fileName: string) {
+    const ext = path.extname(fileName).replace(/^\./, '');
+    const extNameRegex = new RegExp(`${ext}$`);
+    return fileName.replace(extNameRegex, 'tsx');
+}
+
+// this method is called when your extension is deactivated
+export function deactivate() {
 }
