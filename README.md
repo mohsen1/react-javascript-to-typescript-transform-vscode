@@ -1,6 +1,6 @@
 # React JavaScript to TypeScript Transformer for VSCode
 
-<img src="screencapture.gif" />
+<img src="https://raw.githubusercontent.com/mohsen1/react-javascript-to-typescript-transform-vscode/master/screencapture.gif" />
 
 **Convert your React code from JavaScript to TypeScript automatically.**
 
