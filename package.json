@@ -5,6 +5,7 @@
   "version": "1.2.0",
   "logo": "icon.png",
   "publisher": "mohsen1",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:mohsen1/react-javascript-to-typescript-transform-vscode"
