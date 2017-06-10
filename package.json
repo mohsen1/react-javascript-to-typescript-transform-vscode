@@ -2,7 +2,7 @@
   "name": "react-javascript-to-typescript-transform-vscode",
   "displayName": "React JavaScript to TypeScript Transformer for VSCode",
   "description": "Convert your React code from JavaScript to TypeScript automatically.",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "logo": "icon.png",
   "publisher": "mohsen1",
   "repository": {
