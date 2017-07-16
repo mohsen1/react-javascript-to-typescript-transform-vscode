@@ -36,13 +36,13 @@
   "devDependencies": {
     "@types/fs-extra": "^3.0.2",
     "@types/mocha": "^2.2.32",
-    "@types/node": "^7.0.29",
+    "@types/node": "^8.0.13",
     "mocha": "^3.4.2",
-    "typescript": "^2.0.3",
+    "typescript": "^2.4.1",
     "vscode": "^1.0.0"
   },
   "dependencies": {
-    "fs-extra": "^3.0.1",
-    "react-js-to-ts": "^1.1.0"
+    "fs-extra": "^4.0.0",
+    "react-js-to-ts": "^1.2.0"
   }
 }
